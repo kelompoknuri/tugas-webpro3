@@ -78,25 +78,7 @@ class Member extends CI_Controller {
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Selamat!! akun anggota anda sudah dibuat.</div>'); 
         redirect(base_url()); 
     }
-    public function myProfil(){ 
-        $data['judul'] = 'Profil Saya';
-        $user = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-        foreach ($user as $a) { 
-            $data = [ 
-                        'image' => $user['image'], 
-                        'user' => $user['nama'], 
-                        'email' => $user['email'], 
-                        'tanggal_input' => $user['tanggal_input'], 
-                    ]; 
-        } 
-        $this->load->view('templates/templates-user/header', $data); 
-        $this->load->view('member/index', $data); 
-        $this->load->view('templates/templates-user/modal'); 
-        $this->load->view('templates/templates-user/footer', $data); 
-    }
-    public function ubahProfil() 
-    { 
-        $data['judul'] = 'Profil Saya'; 
+    public function myProfil() { 
         $user = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         foreach ($user as $a) { 
             $data = [ 
@@ -105,6 +87,24 @@ class Member extends CI_Controller {
                 'email' => $user['email'], 
                 'tanggal_input' => $user['tanggal_input'], 
             ]; 
+        $data['judul'] = 'Profil Saya';
+        } 
+        $this->load->view('templates/templates-user/header',$data); 
+        $this->load->view('member/index', $data); 
+        $this->load->view('templates/templates-user/modal'); 
+        $this->load->view('templates/templates-user/footer', $data); 
+    }
+    public function ubahProfil() 
+    { 
+        $user = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
+        foreach ($user as $a) { 
+            $data = [ 
+                'image' => $user['image'], 
+                'user' => $user['nama'], 
+                'email' => $user['email'], 
+                'tanggal_input' => $user['tanggal_input'], 
+            ]; 
+        $data['judul'] = 'Ubah Profil'; 
         } 
         $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim', [ 'required' => 'Nama tidak Boleh Kosong' ]); 
         if ($this->form_validation->run() == false) 
@@ -122,9 +122,9 @@ class Member extends CI_Controller {
             if ($upload_image) { 
                 $config['upload_path'] = './assets/img/profile/';
                 $config['allowed_types'] = 'gif|jpg|png'; 
-                $config['max_size'] = '3000'; 
-                $config['max_width'] = '1024'; 
-                $config['max_height'] = '1000'; 
+                $config['max_size'] = '6000'; 
+                $config['max_width'] = '6000'; 
+                $config['max_height'] = '6000'; 
                 $config['file_name'] = 'pro' . time(); 
                 
                 $this->load->library('upload', $config); 
@@ -146,5 +146,12 @@ class Member extends CI_Controller {
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Profil Berhasil diubah </div>'); 
             redirect('member/myprofil'); 
         } 
+    }
+    public function logout() 
+    { 
+        $this->session->unset_userdata('email'); 
+        $this->session->unset_userdata('role_id'); 
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>'); 
+        redirect('home'); 
     }
 }
