@@ -26,8 +26,8 @@
                 <a class="nav-item nav-link active text-white" href="<?= base_url(); ?>">Beranda <span class="sr-only">(current)</span></a>
                 <?php if (!empty($this->session->userdata('email'))) { ?>
                     <a class="nav-item nav-link text-white" href="<?= base_url('booking'); ?>">Booking <b>
-                    <?= $this->ModelBooking->getDataWhere('temp', ['email_user' => 
-                        $this->session->userdata('email')])->num_rows(); ?></b>Buku</a>
+                    <!--  -->
+                    </b>Buku</a>
                     <a class="nav-item nav-link text-white" href="<?= base_url('member/myprofil'); ?>">Profil Saya</a> 
                     <a class="nav-item nav-link text-white" href="<?= base_url('member/logout'); ?>">
                     <i class="fas fw fa-login"></i> Log out</a>
@@ -39,7 +39,8 @@
                                 <?php } ?> 
                             </div> 
                         </div> 
-                        <span class="nav-item nav-link nav-right text-white float-right" style="display:block; margin-left:20px;">Selamat Datang<b> &nbsp;<?= $user; ?></b></span> 
+                        <span class="nav-item nav-link nav-right text-white float-right" style="display:block; margin-left:20px;">
+                        Selamat Datang<b> &nbsp;<?= $user; ?></b></span> 
                     </div> 
                 </nav> 
 <div class="container mt-3">
