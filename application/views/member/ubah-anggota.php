@@ -18,14 +18,17 @@
                         <div class="col-sm-3"> <img src="<?= base_url('assets/img/profile/') . $image; ?>"
                                 class="img-thumbnail" alt=""> </div>
                         <div class="col-sm-9">
-                            <div class="custom-file"> <input type="file" class="custom-file-input" id="image"
-                                    name="image"> <label class="custom-file-label" for="image">Pilih file</label> </div>
+                            <div class="custom-file"> 
+                                <input type="file" class="custom-file-input" id="image"
+                                name="image" accept="img/*" onchange="loadfile(event)"> 
+                                <label class="custom-file-label" for="image">Pilih file</label> 
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="form-group row justify-content-end">
-                <div class="col-sm-10"> <button type="submit" class="btn btn-primary">Ubah</button> <button
+                <div class="col-sm-10"> <button type="submit" class="btn btn-primary">Selesai</button> <button
                         class="btn btn-dark" onclick="window.history.go(-1)"> Kembali</button> </div>
             </div>
             </form>

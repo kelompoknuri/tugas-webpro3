@@ -78,6 +78,8 @@ class ModelBooking extends CI_Model {
             $kode = 1; 
         } 
         $kodemax = str_pad($kode, 3, "0", STR_PAD_LEFT); 
-        $kodejadi = date('dmY') . $kodemax; return $kodejadi; 
+        $kodejadi = date('dmY') . $kodemax; 
+        
+        return $kodejadi; 
     } 
 }
