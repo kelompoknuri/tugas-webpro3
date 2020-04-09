@@ -54,6 +54,9 @@ class ModelBooking extends CI_Model {
     { 
         $this->db->query('CREATE TABLE IF NOT EXISTS temp(id_booking varchar(12), tgl_booking DATETIME, email_user varchar(128), id_buku int)'); 
     } 
+
+    //Create nirwan mustafa
+
     public function selectJoin() 
     { 
         $this->db->select('*'); $this->db->from('booking'); 
