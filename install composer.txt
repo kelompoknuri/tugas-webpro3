@@ -1,0 +1,10 @@
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Lenovo>cd \
+
+C:\>cd xampp\htdocs\pustaka-booking\
+
+C:\xampp\htdocs\pustaka-booking>composer require dompdf/dompdf
+
+C:\xampp\htdocs\pustaka-booking>
