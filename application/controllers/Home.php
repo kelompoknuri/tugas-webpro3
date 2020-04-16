@@ -59,7 +59,5 @@ class Home extends CI_Controller{
         //$this->load->view('templates/templates-user/modal'); 
         $this->load->view('templates/templates-user/footer'); 
     }
-
-  //by: Nirwanmustafa
     
 }
