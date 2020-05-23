@@ -9,9 +9,9 @@
                 <div class="sidebar-brand-text mx-3">Pustaka Booking</div>
             </a>
 
+      
             <!-- Divider -->
-            <hr class="sidebar-divider">
-
+            <hr class="sidebar-divider mt-3">
            
 
             <!-- Looping Menu-->
@@ -22,7 +22,7 @@
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('admin'); ?>">
-                                <i class="fa fa-fw fa book"></i>
+                            <i class="fas fa-home"></i>
                                 <span>Dashboard</span></a>
                         </li>
                     </li>
@@ -39,22 +39,72 @@
                         <!-- Nav Item - Dashboard -->
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('buku/kategori'); ?>">
-                                <i class="fa fa-fw fa book"></i>
+                            <i class="fas fa-layer-group"></i>
                                 <span>Kategori Buku</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('buku'); ?>">
-                                <i class="fa fa-fw fa book"></i>
-                                <span>Data Buku</span></a>
+                            <i class="fas fa-book"></i>
+                            <span>Data Buku</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link pb-0" href="<?= base_url('user/anggota'); ?>">
-                                <i class="fa fa-fw fa book"></i>
-                                <span>Data Anggota</span></a>
+                            <i class="fas fa-users"></i>
+                            <span>Data Anggota</span></a>
                         </li>
                     </li>
                 <!-- Divider -->
                 <hr class="sidebar-divider mt-3">
+                      <!-- Divider -->
+            
+
+<!-- heading -->
+<div class="sidebar-heading">
+    Transaksi
+</div>
+<!-- Nav item - dashboard -->
+<li class="nav-item active">
+    <li class="nav-item">
+        <a class="nav-link pb-0" href="<?= base_url('pinjam');?>">
+        <i class="fas fa-server"></i>
+        <span>Data peminjam</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link pb-0" href="<?= base_url('pinjam/daftarBooking');?>">
+        <i class="fa fa-fw fa-shopping-cart"></i>
+        <span>Data peminjam</span>
+        </a>
+    </li>
+</li>
+<hr class="sidebar-divider mt-3">
+
+<!-- heading -->
+<div class="sidebar-heading">
+    Laporan
+</div>
+<!-- Nav item - dashboard -->
+<li class="nav-item active">
+    <li class="nav-item">
+        <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_buku');?>">
+        <i class="fa fa-fw fa-address-book"></i>
+        <span>Laporan data buku</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_anggota');?>">
+        <i class="fa fa-fw fa-address-book"></i>
+        <span>Laporan data anggota</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link pb-0" href="<?= base_url('laporan/laporan_pinjam');?>">
+        <i class="fa fa-fw fa-address-book"></i>
+        <span>Laporan Peminjam</span>
+        </a>
+    </li>
+</li>
+<hr class="sidebar-divider mt-3">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
