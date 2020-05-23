@@ -38,6 +38,7 @@ Class Autentifikasi extends CI_Controller
 
         //jika usernya ada
         if ($user) {
+            if($user['role_id'] == 1){
             //jika user sudah aktif
             if ($user['is_active'] == 1) {
                 //cek password
@@ -55,6 +56,10 @@ Class Autentifikasi extends CI_Controller
                 }
             } else {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">User belum diaktifasi!!</div>');
+                redirect('autentifikasi');
+            }
+            }else{
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Hanya admin yang boleh masuk!!</div>');
                 redirect('autentifikasi');
             }
         } else {

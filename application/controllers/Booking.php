@@ -63,7 +63,7 @@ class Booking extends CI_Controller
         $tempuser = $this->db->query("select*from temp where id_user ='$userid'")->num_rows(); 
         //cek jika masih ada booking buku yang belum diambil 
         $databooking = $this->db->query("select*from booking where id_user='$userid'")->num_rows(); 
-            if ($databooking > 10) 
+            if ($databooking > 0)//minimal hari
                 { 
                     $this->session->set_flashdata('pesan', 
                     '<div class="alert alert-danger alert-message" role="alert">Masih Ada booking buku sebelumnya yang belum diambil.
@@ -142,8 +142,9 @@ class Booking extends CI_Controller
             $data['items'] = $this->db->query("select*from booking bo, booking_detail d, buku bu where d.id_booking=bo.id_booking and d.id_buku=bu.id and bo.id_user='$id_user'")->result_array(); 
             $this->load->library('pdf');
             $paper_size = 'A4'; 
+            $align='left';
             // ukuran kertas 
-            $orientation = 'landscape'; 
+            $orientation = 'potret'; 
             //tipe format kertas potrait atau landscape 
             // $html = $this->output->get_output(); 
             $this->pdf->set_paper($paper_size, $orientation); //Convert to PDF 

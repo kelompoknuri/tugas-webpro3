@@ -94,8 +94,7 @@ class Member extends CI_Controller {
         $this->load->view('templates/templates-user/modal'); 
         $this->load->view('templates/templates-user/footer', $data); 
     }
-    public function ubahProfil() 
-    { 
+    public function ubahProfil() { 
         $user = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
         foreach ($user as $a) { 
             $data = [ 
@@ -149,8 +148,7 @@ class Member extends CI_Controller {
     }
     public function logout() 
     { 
-        $this->session->unset_userdata('email'); 
-        $this->session->unset_userdata('role_id'); 
+        $this->session->sess_destroy(); 
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Anda telah logout!!</div>'); 
         redirect('home'); 
     }
