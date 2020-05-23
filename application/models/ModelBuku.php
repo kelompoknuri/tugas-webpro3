@@ -75,4 +75,11 @@ class ModelBuku extends CI_Model
         $this->db->where($where);
         return $this->db->get();
     }
+    public function getLimitBuku()
+    {
+        $this->db->select('*');
+        $this->db->from('buku');
+        $this->db->limit(10, 0);
+        return $this->db->get();
+    }
 }
